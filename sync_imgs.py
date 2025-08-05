@@ -5,7 +5,7 @@ import requests
 from fnmatch import fnmatch
 
 class ImageMarkdownSync:
-    IMGPATTERN = r'!\[.*?\]\((.*?)\)|<img.*?src\ *=\ *[\'\"](.*?)[\'\"].*?>'
+    IMGPATTERN = r'!\[.*?\]\((.*?)\)|<img.*?src\ *=\ *[\'\"](.*?)[\'\"].*?>|{{<\s*figure\s+link=["\'](.*?)["\'].*?>}}'
 
     def __init__(self, img_dir, md_dir, upload_client: 'SMMSClient', config_path='config.json'):
         self.img_dir = os.path.abspath(img_dir)
